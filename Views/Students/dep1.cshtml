@@ -1,0 +1,45 @@
+﻿@model IEnumerable<tryno2.Models.Course>
+@{
+    ViewBag.Title = "dep1";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <h2>
+
+      
+      @Session["dname"] Department 
+
+    </h2>
+    <a href="~/students/create/@Session["ID"]" class="btn btn-success">add new course</a>
+<table class="table">
+    <tr>
+
+        <th>
+            Course ID
+        </th>
+        <th>
+            Course Name
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.ID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Name)
+    </td>
+  
+
+</tr>
+}
+
+
+
+</table>
+
+
+

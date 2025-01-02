@@ -1,0 +1,78 @@
+﻿@model tryno2.Models.Student
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div>
+    <h4>@Session["Name"]</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            your ID
+        </dt>
+
+        <dd>
+            @Model.ID
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fname)
+        </dt>
+
+        <dd>
+            @Model.Fname
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lname)
+        </dt>
+
+        <dd>
+            @Model.Lname
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Model.Email
+        </dd>
+
+
+
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+
+        <dd>
+            @Model.PhoneNumber
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Age)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Settings", new { id = Model.ID }) |
+    @Html.ActionLink("Back to Home", "home")
+</p>

@@ -1,0 +1,47 @@
+﻿@model IEnumerable<tryno2.Models.Take>
+@{
+    ViewBag.Title = "home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Welcome @Session["Name"] </h2>
+
+<p>Your Courses </p>
+<a href="~/students/create/@Session["ID"]" class="btn btn-success">add new course</a>
+
+<table class="table">
+    <tr>
+
+        <th>
+            Course ID
+        </th>
+        <th>
+            Course Name
+        </th>
+
+    </tr>
+
+
+    @foreach (var item in Model)
+    {
+
+        <tr>
+
+            <td>
+                @item.Course.ID
+            </td>
+            <td>
+                @item.Course.Name
+            </td>
+            <td>  @Html.ActionLink("Leave", "Delete", new { id = item.id }, htmlAttributes: new { @class="btn btn-danger"}) </td>
+
+        </tr>
+
+
+    }
+
+</table>
+
+
+
+
